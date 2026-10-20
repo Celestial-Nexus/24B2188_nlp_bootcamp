@@ -1,0 +1,57 @@
+{
+  "name": "Rishabh Srivastava",
+  "roll_no": "24B2188",
+  "seed": 42,
+  "gpu_used": "CUDA",
+  "task1": {
+    "bm25_settings": "k1=0.9, b=0.5, stemmer=snowball_english",
+    "val_ndcg10": 0.8641
+  },
+  "task2": {
+    "general_model": "BAAI/bge-base-en-v1.5",
+    "scientific_model": "pritamdeka/S-PubMedBert-MS-MARCO",
+    "val_ndcg10_general": 0.8906,
+    "val_ndcg10_scientific": 0.8438,
+    "index_time_sec": {
+      "general": 25.4,
+      "scientific": 332.2
+    },
+    "query_latency_ms": {
+      "general": 8.2,
+      "scientific": 12.1
+    },
+    "memory_mb": {
+      "general": null,
+      "scientific": 256.5
+    }
+  },
+  "task3": {
+    "hybrid_method": "Score interp alpha=0.4",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-12-v2",
+    "rerank_top_k": 20,
+    "val_ndcg10_hybrid": 0.9135,
+    "val_ndcg10_rerank": 0.8703,
+    "rerank_query_latency_ms": 222.3
+  },
+  "task4": {
+    "base_model": "BAAI/bge-base-en-v1.5",
+    "val_ndcg10_random_negatives": 0.9107,
+    "val_ndcg10_hard_negatives": 0.915
+  },
+  "task5": {
+    "retriever_used": "t4_hard",
+    "nli_model": "cross-encoder/nli-deberta-v3-small",
+    "zero_shot_or_finetuned": "zero_shot",
+    "val_f1": 0.1718
+  },
+  "report_q1": {
+    "bm25_wins": [
+      34,
+      1261
+    ],
+    "general_wins": [
+      463,
+      766
+    ]
+  }
+}
